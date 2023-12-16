@@ -1,5 +1,5 @@
 name: m324 ab3 a3
-run-name: ${{ github.actor }} is running continuous integration🚀
+run-name: ${{ github.actor }}
 on: [push]
 jobs:
   build-and-test:
