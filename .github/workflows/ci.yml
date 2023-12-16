@@ -1,0 +1,42 @@
+# name: Lint Test Build
+# run-name: ${{ github.actor }} is running continuous integration🚀
+# on: [push]
+# jobs:
+#   Basic-Integration:
+#     runs-on: ubuntu-runners
+#     steps:
+#       - uses: actions/checkout@v4
+#       - run: ls
+#       - run: yarn install
+#       - run: yarn lint
+#       - run: yarn test
+#       - run: yarn build
+name: Continuous Integration
+
+on: [push, pull_request]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14' # Setzen Sie die gewünschte Node-Version ein
+
+    - name: Install dependencies
+      run: yarn install
+
+    - name: Run Linter
+      run: yarn lint
+      # Wenn der Linter Fehler findet, wird der Workflow hier fehlschlagen
+
+    - name: Run Tests
+      run: yarn test
+      # Wenn Tests fehlschlagen, wird der Workflow hier fehlschlagen
+
+    - name: Build Project
+      run: yarn build
+      # Wenn der Build fehlschlägt, wird der Workflow hier fehlschlagen
