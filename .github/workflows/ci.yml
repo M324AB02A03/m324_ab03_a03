@@ -1,11 +1,18 @@
 name: m324 ab3 a3
 on: [push]
 jobs:
-  workflow:
+  build-and-test:
     runs-on: ubuntu-runners
     steps:
-      - uses: actions/checkout@v4
-      - run: yarn install
-      - run: yarn lint
-      - run: yarn test
-      - run: yarn build
+    - uses: actions/checkout@v4
+    - name: Install Yarn
+      run: npm install -g yarn
+    - name: Install dependencies
+      run: yarn install
+    - name: Build project
+      run: yarn build
+    - name: Run Linter
+      run: yarn lint
+    - name: Run tests
+      run: yarn test
+
