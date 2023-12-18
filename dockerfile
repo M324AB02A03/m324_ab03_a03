@@ -1,5 +1,5 @@
 # Verwenden eines spezifischen Node.js-Images als Basis
-FROM node:14
+FROM node:18
 
 # Setzen des Arbeitsverzeichnisses im Container
 WORKDIR /app
@@ -9,7 +9,7 @@ COPY package.json .
 COPY yarn.lock .
 
 # Installieren von Abhängigkeiten
-RUN yarn install 
+RUN yarn install --frozen-lockfile
 
 # Kopieren aller Dateien in das Arbeitsverzeichnis
 COPY . .
