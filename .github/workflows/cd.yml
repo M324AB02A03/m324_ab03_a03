@@ -1,11 +1,8 @@
 name: m324 AB05 A02
 on:
   push:
-  # pull_request:
-    branch:
+    branches:
       - master
-    types:
-      - closed
 jobs:
   build-and-push-cd:
     runs-on: self-hosted
@@ -32,7 +29,6 @@ jobs:
       - name: Set Kubernetes Context
         uses: azure/k8s-set-context@v3
         with:
-          # Hie no de name woni nime agäh oder wie meinsch
           kubeconfig: ${{ secrets.KUBE_CONFIG }}
 
       - name: Deploy to Kubernetes
