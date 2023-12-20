@@ -1,7 +1,7 @@
 name: m324 AB05 A02
 on:
-  push:
-  # pull_request:
+  
+  pull_request:
     branch:
       - master
     types:
@@ -32,7 +32,6 @@ jobs:
       - name: Set Kubernetes Context
         uses: azure/k8s-set-context@v3
         with:
-          # Hie no de name woni nime agäh oder wie meinsch
           kubeconfig: ${{ secrets.KUBE_CONFIG }}
 
       - name: Deploy to Kubernetes
