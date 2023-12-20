@@ -1,9 +1,9 @@
 name: m324 ab3 a3
-on: 
-  pull_request: 
-    branch: 
+on:
+  pull_request:
+    branch:
       - master
-    path: 
+    path:
       - 'development'
 jobs:
   build-and-test-ci:
