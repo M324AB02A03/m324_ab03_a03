@@ -1,6 +1,7 @@
 name: m324 AB05 A02
 on:
-  pull_request:
+  push:
+  # pull_request:
     branch:
       - master
     types:
@@ -27,3 +28,16 @@ jobs:
           context: .
           push: true
           tags: lizsalatmon/m324-ts-dockerfile:m324Tagv1
+
+      - name: Set Kubernetes Context
+        uses: azure/k8s-set-context@v3
+        with:
+          # Hie no de name woni nime agäh oder wie meinsch
+          kubeconfig: ${{ secrets.KUBE_CONFIG }}
+
+      - name: Deploy to Kubernetes
+        run: |
+          kubectl apply -f .k8s/namespace.yml
+          kubectl apply -f .k8s/deployment.yml
+          kubectl apply -f .k8s/service.yml
+          kubectl apply -f .k8s/ingress.yml
