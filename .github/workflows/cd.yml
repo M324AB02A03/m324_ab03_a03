@@ -25,6 +25,9 @@ jobs:
           context: .
           push: true
           tags: lizsalatmon/m324-ts-dockerfile:m324Tagv1
+          
+      - name: Install kubectl
+        uses: azure/setup-kubectl@v1
 
       - name: Set Kubernetes Context
         uses: azure/k8s-set-context@v3
