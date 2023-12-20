@@ -1,0 +1,29 @@
+name: m324 ab3 a3
+on:
+  pull_request_review:
+    branch:
+      - master
+    types:
+      - closed
+jobs:
+  build-and-push-cd:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: lizsalatmon/m324-ts-dockerfile:m324Tagv1
