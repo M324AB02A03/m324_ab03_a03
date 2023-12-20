@@ -4,7 +4,7 @@ on:
     branch:
       - master
     types:
-      - submittet
+      - closed
 jobs:
   build-and-push-cd:
     runs-on: self-hosted
