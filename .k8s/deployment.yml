@@ -21,7 +21,7 @@ spec:
           image: lizsalatmon/m324-ts-dockerfile:m324Tagv1
           command:
             - /bin/sh
-            - "-c"
+            - '-c'
             - yarn start
           startupProbe:
             httpGet:
