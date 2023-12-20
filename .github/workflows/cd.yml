@@ -1,11 +1,8 @@
 name: m324 AB05 A02
 on:
-  
-  pull_request:
-    branch:
+  push:
+    branches:
       - master
-    types:
-      - closed
 jobs:
   build-and-push-cd:
     runs-on: self-hosted
