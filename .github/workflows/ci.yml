@@ -5,7 +5,7 @@ on:
     path: 
       - 'development'
 jobs:
-  build-and-push:
+  build-and-test-ci:
     runs-on: self-hosted
     steps:
       - name: Checkout Repository

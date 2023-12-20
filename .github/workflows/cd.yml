@@ -6,7 +6,7 @@ on:
     types:
       - submittet
 jobs:
-  build-and-push:
+  build-and-push-cd:
     runs-on: self-hosted
     steps:
       - name: Checkout Repository
