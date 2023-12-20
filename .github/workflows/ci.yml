@@ -6,7 +6,7 @@ on:
       - 'development'
 jobs:
   build-and-push:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-runners
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
