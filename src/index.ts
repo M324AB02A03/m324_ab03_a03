@@ -13,10 +13,9 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.get('/log/time', (req, res) => {
-  const currentTime = new Date();
   // eslint-disable-next-line no-console
-  console.log(currentTime);
-  res.send(`OK - Current Time: ${currentTime.toISOString()}`);
+  console.log(Date());
+  res.send('Date logged!');
 });
 
 const serverPort = process.env.PORT || 3000;
