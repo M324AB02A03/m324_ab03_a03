@@ -9,6 +9,14 @@ jobs:
   build-and-test-ci:
     runs-on: self-hosted
     steps:
+      - name: Get current date
+        id: date
+        uses: Kaven-Universe/github-action-current-date-time@v1
+        with:
+          format: 'YYYY_MM_DD_HH_mm_ss'
+
+      - run: echo "${{ steps.date.outputs.time }}"
+      
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -20,5 +28,5 @@ jobs:
         with:
           context: .
           push: false
-          tags: lizsalatmon/m324-ts-dockerfile:m324Tagv4
+          tags: lizsalatmon/m324-ts-dockerfile:m324Tagv5
 
