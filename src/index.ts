@@ -13,8 +13,9 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.get('/log/time', (req: Request, res: Response) => {
-  const timestamp = new Date().toISOString();
-  res.send(`${timestamp} <p>Host: ${os.hostname()}</p>`);
+  // eslint-disable-next-line no-console
+  console.log('Current Date' + Date());
+  res.send('OK');
 });
 
 const serverPort = process.env.PORT || 3000;
