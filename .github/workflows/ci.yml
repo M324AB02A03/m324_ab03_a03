@@ -20,5 +20,5 @@ jobs:
         with:
           context: .
           push: false
-          tags: lizsalatmon/m324-ts-dockerfile:m324Tagv3
+          tags: lizsalatmon/m324-ts-dockerfile:m324Tagv4
 
