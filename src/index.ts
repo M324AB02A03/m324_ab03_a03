@@ -14,7 +14,7 @@ app.get('/', (req: Request, res: Response) => {
 
 app.get('/log/time', (req, res) => {
   // eslint-disable-next-line no-console
-  console.log('Date()');
+  console.log(Date());
   res.send('OK');
 });
 
