@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: meine-app
-          image: lizsalatmon/m324-ts-dockerfile:m324Tagv1
+          image: lizsalatmon/m324-ts-dockerfile:m324Tagv3
           command:
             - /bin/sh
             - '-c'
