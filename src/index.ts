@@ -12,9 +12,9 @@ app.get('/', (req: Request, res: Response) => {
   res.send(`<h1>Hello World!</h1><p>Host: ${os.hostname()}</p>`);
 });
 
-app.get('/log/time', (req: Request, res: Response) => {
+app.get('/log/time', (req, res) => {
   // eslint-disable-next-line no-console
-  console.log('Current Date' + Date());
+  console.log('Date()');
   res.send('OK');
 });
 

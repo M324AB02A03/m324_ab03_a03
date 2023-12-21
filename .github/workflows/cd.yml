@@ -11,7 +11,7 @@ jobs:
       DOCKERHUB_USERNAME: lizsalatmon
       KUBERNETES_NAMESPACE: m324-3
       APP_NAME: meine-app
-      IMAGE_TAG: lizsalatmon/m324-ts-dockerfile:m324Tagv1
+      IMAGE_TAG: lizsalatmon/m324-ts-dockerfile:m324Tagv2
       BASE_URL: basil.subdomain.m324.hackerman.ch
 
     steps:
