@@ -2,7 +2,6 @@ import express from 'express';
 import http from 'http';
 import { Request, Response } from 'express';
 import os from 'os';
-import { Timestamp } from 'mongodb';
 
 // Create the express server
 const app = express();
