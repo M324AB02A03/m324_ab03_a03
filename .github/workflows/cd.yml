@@ -1,31 +1,33 @@
 name: m324 AB05 A02
 on:
-  push:
+  pull_request:
     branches:
       - master
-
+    types:
+      - opened
+      - synchonize
 jobs:
   build-and-push-cd:
     runs-on: self-hosted
     env:
-      DOCKERHUB_USERNAME: lizsalatmon
+      # DOCKERHUB_USERNAME: lizsalatmon
       KUBERNETES_NAMESPACE: m324-3
       APP_NAME: meine-app
       IMAGE_TAG: lizsalatmon/m324-ts-dockerfile:m324Tagv1
-      BASE_URL: meine-subdomain.m324.hackerman.ch
+      BASE_URL: basil.subdomain.m324.hackerman.ch
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
 
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5

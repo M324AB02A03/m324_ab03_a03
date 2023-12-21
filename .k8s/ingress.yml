@@ -12,10 +12,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - meine-subdomain.m324.hackerman.ch
-      secretName: meine-subdomain.m324.hackerman.ch-tls
+        - basil.subdomain.m324.hackerman.ch
+      secretName: basil.subdomain.m324.hackerman.ch-tls
   rules:
-    - host: meine-subdomain.m324.hackerman.ch
+    - host: basil.subdomain.m324.hackerman.ch
       http:
         paths:
           - path: /
